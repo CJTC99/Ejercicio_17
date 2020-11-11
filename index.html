@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+
+<style>
+	* {
+	    font-family: sans-serif;
+	}
+	textarea {
+	    padding: 8px;
+	    border: 1px solid #ddd;
+	    width: 400px;
+	    min-height: 100px;
+	}
+	label{
+		display: block;
+		font-weight: bold;
+	}
+</style>
+
+<body>
+
+<label for="contador"> 
+	Mensaje
+</label>
+<textarea name="contador" id="contador" onpaste="contarcaracteres();" onkeyup="contarcaracteres();"></textarea>
+<div id="res">
+	100
+</div>
+
+<script>
+	function contarcaracteres(){
+		
+		var total=100;
+
+		setTimeout(function(){
+		var valor=document.getElementById('contador');
+		var respuesta=document.getElementById('res');
+		var cantidad=valor.value.length;
+		document.getElementById('res').innerHTML =  (total - cantidad) ;
+		if(cantidad>total){
+			respuesta.style.color = "red";
+		}
+		else {
+			respuesta.style.color = "black";
+		}
+		},10);
+
+	}
+</script>
+
+
+
+</body>
+</html>
